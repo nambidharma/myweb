@@ -8,7 +8,7 @@ pipeline {
     	}
 	parameters {
 		choice choices: ['Dev', 'SIT', 'QA', 'PROD'], name: 'ENV'
-		string defaultValue: ['1.0.0','1.1.1'] name: 'VERSION'
+		  string defaultValue: '1.0.0', name: 'VERSION'
 	}
 	
 	stages {
