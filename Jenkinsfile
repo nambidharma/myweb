@@ -6,6 +6,11 @@ pipeline {
         	DISABLE_AUTH = 'true'
         	DB_ENGINE    = 'sqlite'
     	}
+	parameters {
+		choice choices: ['Dev', 'SIT', 'QA', 'PROD'], name: 'ENV'
+		string defaultValue: '1.0.0', name: 'VERSION'
+	}
+	
 	stages {
 		stage("working with file operations") {
 			steps {
@@ -17,6 +22,8 @@ pipeline {
 					println "Print DISABLE_AUTH is ${env.DISABLE_AUTH}"
 					echo "Database engine is ${DB_ENGINE}"
 					echo "DISABLE_AUTH is ${DISABLE_AUTH}"
+					println "Env selected is ${params.ENV}"
+					echo "Version selected is ${params.VERSION}"
 					sh 'printenv'
 					}
 			}
