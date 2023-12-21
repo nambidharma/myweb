@@ -8,7 +8,6 @@ pipeline {
 					var2=" value is 10"
 					printlin "The value of var1 is ${var1}, value of var2 is ${var2}"
 					}
-				}
 			}
 		}
 	}
