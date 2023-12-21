@@ -1,3 +1,10 @@
+def myfn() {
+	println "my first fuction cdoe"
+}
+def mysumfn(a,b) {
+	sum =a+b
+	println "My fun witt pram sum of a + b is ${sum} " 
+}
 pipeline {
 	agent {
         	label '!windows'
@@ -8,7 +15,7 @@ pipeline {
     	}
 	parameters {
 		choice choices: ['Dev', 'SIT', 'QA', 'PROD'], name: 'ENV'
-		  string defaultValue: '1.0.0', name: 'VERSION'
+		string defaultValue:'1.1.1', name: 'VERSION'
 	}
 	
 	stages {
@@ -23,8 +30,11 @@ pipeline {
 					echo "Database engine is ${DB_ENGINE}"
 					echo "DISABLE_AUTH is ${DISABLE_AUTH}"
 					println "Env selected is ${params.ENV}"
-					println "Version selected is ${params.VERSION}"
-				}
+					echo "Version selected is ${params.VERSION}"
+					sh 'printenv'
+					myfn()
+					mysumfn(3,3)
+					}
 			}
 		}
 	}
