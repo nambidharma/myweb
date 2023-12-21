@@ -3,7 +3,7 @@ def myfn() {
 }
 def mysumfn(a,b) {
 	sum =a+b
-	println "My fun witt pram sum of a + b is ${sum} " 
+	println "My fun with pram sum of a + b is ${sum} " 
 }
 pipeline {
 	agent {
