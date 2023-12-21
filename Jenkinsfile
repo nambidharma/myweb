@@ -23,7 +23,7 @@ pipeline {
 					echo "Database engine is ${DB_ENGINE}"
 					echo "DISABLE_AUTH is ${DISABLE_AUTH}"
 					println "Env selected is ${params.ENV}"
-					echo "Version selected is ${params.VERSION}"
+					println "Version selected is ${params.VERSION}"
 					sh 'printenv'
 					}
 			}
